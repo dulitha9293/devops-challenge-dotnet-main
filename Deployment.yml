@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-challenge-dotnet
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-challenge-dotnet
+  template:
+    metadata:
+      labels:
+        app: devops-challenge-dotnet
+    spec:
+      containers:
+        - name: devops-challenge-dotnet
+          image: your-dockerhub-username/devops-challenge-dotnet:latest
+          ports:
+            - containerPort: 80
